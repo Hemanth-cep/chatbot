@@ -1,11 +1,40 @@
-import React from "react"
+import React, { useState } from "react"
 import "./header.css"
+import Navlinks from "../navlinks/navlinks"
+import SideDrawer from "../sidedrawer/sidedrawer"
+import Backdrop from "../backdrop/backdrop"
 
 function Header(){
+
+    var [drawerOpen , setDrawerOpen] = useState(false)
+
+    function handleOpenDrawer(){
+        setDrawerOpen(true)
+    }
+
+    function handleCloseDrawer(){
+        setDrawerOpen(false)
+    }
+    
     return(
-        <nav className="header">
-            <img src="https://cdn-icons-png.flaticon.com/512/4616/4616809.png" alt="" />
-        </nav>
+        <React.Fragment>
+            {drawerOpen && <Backdrop close={handleCloseDrawer}/>}
+            <SideDrawer show={drawerOpen}>
+                <h1 className="side-drawer-h1">Go to</h1>
+                <Navlinks close={handleCloseDrawer}/>
+            </SideDrawer>
+            <nav className="header">
+                <h1>ZEN AI</h1>
+                <div className="main-navigation-buttons">
+                    <Navlinks />
+                </div>
+                <div className="hamburger" onClick={handleOpenDrawer}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </React.Fragment>
     )
 }
 
