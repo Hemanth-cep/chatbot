@@ -2,12 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: whitesmoke;
+    font-family:"Fira Sans", sans-serif;;
 }
 .app{
     min-height: 100vh;
-    background: rgb(0,0,0);
     background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(13,32,59,1) 100%);
-}
-h1{
-    color: white;
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }

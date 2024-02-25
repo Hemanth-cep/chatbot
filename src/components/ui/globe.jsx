@@ -13,8 +13,8 @@ const Globe = () => {
 
     const material = new THREE.MeshStandardMaterial({
       roughness: 0.7,
-      // transparent: true,
-      // opacity: 1, 
+      transparent: true,
+      opacity: 1, 
     });
 
     const mesh = new THREE.Mesh(geometry, material);
@@ -24,8 +24,8 @@ const Globe = () => {
     const sizes = {
         // width: window.innerWidth,
         // height: window.innerHeight,
-        width: 500,
-        height: 500,
+        width: window.innerWidth < 420 ? 230 : 300,
+        height: window.innerWidth < 420 ? 230 : 300,
     }
 
     //lights
@@ -35,16 +35,15 @@ const Globe = () => {
 
     //camera
     const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1 , 100);
-    camera.position.z = 20;
+    camera.position.z = 10;
     scene.add(camera)
 
     //renderer
     const canvas = document.querySelector(".webgl");
-    const renderer = new THREE.WebGLRenderer({ canvas });
+    const renderer = new THREE.WebGLRenderer({ canvas , alpha: true});
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(2)
-    // / ,alpha: true
-    // renderer.setClearAlpha(0);
+    renderer.setClearAlpha(0);
 
     //controls to actually move it which mouse click on it
     const controls = new OrbitControls(camera, canvas)
@@ -57,8 +56,8 @@ const Globe = () => {
     //resize
     window.addEventListener('resize',()=>{
         //update sizes
-        sizes.width = 500
-        sizes.height = 500
+        sizes.width = window.innerWidth < 420 ? 230 : 300
+        sizes.height = window.innerWidth < 420 ? 230 : 300
 
         //update camera
         camera.updateProjectionMatrix();

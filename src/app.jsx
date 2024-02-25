@@ -1,11 +1,13 @@
 import React from "react"
 import "./app.css"
-import Globe from "./globe"
+import Header from "./components/header/header"
+import Hero from "./components/hero/hero"
 
 function App(){
     return(
         <div className="app">
-             <h1>hello world</h1>
+             <Header />
+             <Hero />
         </div>
     )
 }
