@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import "./hero.css"
 import Globe from "../ui/globe"
 import Chatbot from "../chatbot/chatbot"
+import TypeWrite from "../ui/typewrite"
 
 function Hero(){
 
@@ -28,7 +29,8 @@ function Hero(){
                     <h1>Generative AI</h1>
                 </div>
                 <div className="introduction">
-                    <h1>Hi i am <span style={{color:"red"}}>ZEN</span> a Human Assistant</h1>
+                    {/* <h1>Hi i am <span style={{color:"red"}}>ZEN</span> a Human Assistant</h1> */}
+                    <TypeWrite />
                 </div>
                 <div className="globe-3d">
                     <Globe />
