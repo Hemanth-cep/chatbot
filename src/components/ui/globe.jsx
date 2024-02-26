@@ -12,7 +12,7 @@ const Globe = () => {
     const geometry = new THREE.SphereGeometry(3, 64, 64);  //first parameter is the radius of the sphere and the other two are the segments of the sphere
 
     const material = new THREE.MeshStandardMaterial({
-      roughness: 0.7,
+      roughness: 0.5,
       transparent: true,
       opacity: 1, 
     });

@@ -24,7 +24,7 @@ function Header(){
                 <Navlinks close={handleCloseDrawer}/>
             </SideDrawer>
             <nav className="header">
-                <h1>ZEN AI</h1>
+                <h1>ZenGPT</h1>
                 <div className="main-navigation-buttons">
                     <Navlinks />
                 </div>
