@@ -29,7 +29,7 @@ const Globe = () => {
     }
 
     //lights
-    const light = new THREE.PointLight(0xffffff ,150 ,100) //first parameter is the color of the light and second parameter is the intensity(brightness) of the light and third parameter is the distance the light can travel
+    const light = new THREE.PointLight(0xffffff ,200 ,100) //first parameter is the color of the light and second parameter is the intensity(brightness) of the light and third parameter is the distance the light can travel
     light.position.set(0 , 10, 10)
     scene.add(light)
 
@@ -70,18 +70,18 @@ const Globe = () => {
     tl.fromTo(mesh.scale, {z:0, x:0, y:0}, {z:1, x:1, y:1})
 
     //automatic color changing
-    gsap.to(mesh.material, {
-      hue: 1, // Full hue spectrum
-      saturation: 1, // Full saturation
-      lightness: 1, // Constant lightness
-      repeat: -1,
-      yoyo: true,
-      duration: 5,
-      onUpdate: () => {
-        // Update the material color based on HSL values
-        mesh.material.color.setHSL(mesh.material.hue, mesh.material.saturation, mesh.material.lightness);
-      },
-    });
+    // gsap.to(mesh.material, {
+    //   hue: 1, // Full hue spectrum
+    //   saturation: 1, // Full saturation
+    //   lightness: 1, // Constant lightness
+    //   repeat: -1,
+    //   yoyo: true,
+    //   duration: 5,
+    //   onUpdate: () => {
+    //     // Update the material color based on HSL values
+    //     mesh.material.color.setHSL(mesh.material.hue, mesh.material.saturation, mesh.material.lightness);
+    //   },
+    // });
 
 
     const animate = (event) => {

@@ -3,6 +3,7 @@ import "./hero.css"
 import Globe from "../ui/globe"
 import Chatbot from "../chatbot/chatbot"
 import TypeWrite from "../ui/typewrite"
+import RobotGif from "./robot.gif"
 
 function Hero(){
 
@@ -29,14 +30,14 @@ function Hero(){
                     <h1>Generative AI</h1>
                 </div>
                 <div className="introduction">
-                    {/* <h1>Hi i am <span style={{color:"red"}}>ZEN</span> a Human Assistant</h1> */}
+                    <img src={RobotGif} alt="" />
                     <TypeWrite />
                 </div>
                 <div className="globe-3d">
                     <Globe />
                 </div>
                 <div className="chatbot-entry">
-                    <button className="openbtn" onClick={handleOpenBot}>Talk to Zen</button>
+                    <button className="openbtn" onClick={handleOpenBot}>Chat with Zen</button>
                 </div>
             </div>
         </React.Fragment>

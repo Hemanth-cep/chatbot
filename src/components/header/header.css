@@ -42,7 +42,7 @@ li{
 }
 
 .headerBtn:hover{
-    border-bottom: 1px solid white;
+    text-shadow: 0px 0px 3px white;
 }
 
 .hamburger{
