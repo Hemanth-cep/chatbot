@@ -69,21 +69,6 @@ const Globe = () => {
     const tl = gsap.timeline({defaults: {duration: 1}})
     tl.fromTo(mesh.scale, {z:0, x:0, y:0}, {z:1, x:1, y:1})
 
-    //automatic color changing
-    // gsap.to(mesh.material, {
-    //   hue: 1, // Full hue spectrum
-    //   saturation: 1, // Full saturation
-    //   lightness: 1, // Constant lightness
-    //   repeat: -1,
-    //   yoyo: true,
-    //   duration: 5,
-    //   onUpdate: () => {
-    //     // Update the material color based on HSL values
-    //     mesh.material.color.setHSL(mesh.material.hue, mesh.material.saturation, mesh.material.lightness);
-    //   },
-    // });
-
-
     const animate = (event) => {
       controls.update();  
       renderer.render(scene, camera);
@@ -91,7 +76,7 @@ const Globe = () => {
     };
 
     animate();
-  }, []); // empty dependency array to ensure useEffect runs only once
+  }, []);
 
   return <canvas className="webgl"></canvas>;
 };
