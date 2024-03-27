@@ -6,6 +6,7 @@ function Navlinks(props){
         <ul className="nav-elements">
                 <li onClick={props.close}><Link to="/" ><button className="headerBtn">HOME</button></Link></li>
                 <li onClick={props.close}><Link to="/about"><button className="headerBtn">ABOUT</button></Link></li>
+                <li onClick={props.close}><Link to="/auth"><button className="headerBtn">SIGN-IN</button></Link></li>
         </ul>
     )
 }
